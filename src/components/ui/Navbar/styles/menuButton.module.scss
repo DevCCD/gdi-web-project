@@ -1,0 +1,46 @@
+.menu {
+	--size: 40px;
+	position: relative;
+	border: 1px solid #CDD2D7;
+	color: var(--color-primary);
+	width: var(--size);
+	height: var(--size);
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&:hover {
+		border: 1px solid var(--color-primary);
+	}
+	&.open {
+		border: 1px solid var(--color-primary);
+	}
+}
+
+.line,
+.centerLine {
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	background-color: currentColor;
+	border-radius: 1rem;
+}
+.centerLine {
+	/* height: 2.35px; */
+}
+
+.centerLines {
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (min-width: 850px) {
+	.menu {
+		display: none;
+	}
+}

@@ -1,0 +1,70 @@
+.collapse {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    .collapseButton {
+        width: 100%;
+        font-size: 20px;
+        position: relative;
+        cursor: pointer;
+        line-height: 30px;
+        font-weight: 500;
+        padding: 18px 30px 18px 30px;
+        text-transform: capitalize;
+        color: var(--color-primary-two);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        user-select: none;
+        font-family: var(--font-serif);
+        transition: all 0.3s ease;
+        background-color: #ebf4fe;
+        .title_text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+
+        }
+        &.open {
+            background-color: var(--color-primary);
+            color: white;
+            .trigger {
+                color: white;
+            }
+        }
+        .trigger {
+            --size: 20px;
+            width: var(--size);
+            height: var(--size);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            .bar,
+            .bar2 {
+                position: absolute;
+                width: 16px;
+                height: 4px;
+                background-color: currentColor;
+                border-radius: 8px;
+            }
+
+            .bar2 {
+                transform: rotate(90deg);
+            }
+        }
+    }
+    .wrapper {
+        position: relative;
+        display: block;
+        .collapseContent {
+            padding: 0px 25px 25px 30px;
+            position: relative;
+            color: white;
+        }
+    }
+}

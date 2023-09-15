@@ -1,0 +1,21 @@
+.image {
+    position: relative;
+    padding: 10px;
+    z-index: 1;
+    span {
+        position: absolute;
+        z-index: -1;
+    }
+    .triangle_one {
+        left: 0;
+        bottom: 0;
+        border-bottom: 200px solid var(--color-primary);
+        border-right: 200px solid transparent;
+    }
+    .triangle_two {
+        right: 0;
+        top: 0;
+        border-top: 200px solid var(--color-primary);
+        border-left: 200px solid transparent;
+    }
+}

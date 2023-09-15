@@ -1,0 +1,97 @@
+.container {
+    position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - var(--navbar-height-compact));
+    // display: flex;
+	// justify-content: center;
+	// align-items: center;
+    z-index: 899;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(245, 248, 250, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        backdrop-filter: blur(28px) saturate(125%);
+    }
+    .menu_container {
+        position: relative;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        .menu {
+            position: relative;
+            height: fit-content;
+            padding: 1.5rem 1rem;
+            padding-top: .5rem;
+            .menu_component {
+                position: relative;
+                .menu_component_title {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.5rem 0rem;
+                    margin-bottom: 12px;
+                    h2 {
+                        font-size: 1.625rem;
+                        margin-bottom: 0;
+                        font-weight: 600;
+                    }
+                }
+    
+                .menu_component_list {
+                    display: flex;
+                    background-color: hsla(0,0%,100%,.6);
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    padding: 4px;
+                    box-shadow: rgba(0,0,0,.075) 0px 1px 3px 0px,rgba(0,0,0,.035) 0px 1px 2px 0px;
+                    width: 100%;
+                    ul {
+                        width: 100%;
+                        .item_list {
+                            width: 100%;
+                            border-radius: 0.8rem;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                            display: grid;
+                            align-items: center;
+                            padding: 0 calc(1.1rem - 8px);
+                            padding-left: calc(1.1rem - 6px);
+                            .link {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                grid-template-columns: 1fr auto;
+                                padding: 1.35rem 0;
+                                border-bottom: 0.5px solid #e5e7eb;
+                                grid-gap: 0.5rem;
+                                gap: 0.5rem;
+                                font-weight: 500;
+                                .chevron {
+                                    width: 20px;
+                                    height: 20px;
+                                    transform: rotate(-90deg);
+                                    opacity: 0.45;
+                                }
+                                
+                            }
+                            &:last-child .link {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}

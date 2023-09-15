@@ -1,0 +1,43 @@
+.scrollUp {
+	--size: 54px;
+	display: flex;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	box-shadow: var(--scrollUpBoxShadow);
+	cursor: pointer;
+	color: var(--color-primary);
+}
+
+.icon {
+	display: flex;
+}
+
+.scrollBg {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	transform: rotate(-90deg);
+	pointer-events: none;
+	pointer-events: none;
+}
+
+.scrollBg circle {
+	stroke-dashoffset: 0;
+	stroke-width: 6px;
+	fill: none;
+}
+
+.scrollContainer {
+	stroke: var(--backgroundAccent);
+}
+
+.scrollIndicator {
+	stroke: var(--color-primary);
+}

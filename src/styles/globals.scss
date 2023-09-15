@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-sans: 'Open Sans', sans-serif;
+    --font-serif: 'Ubuntu', serif;
+    --color-primary: #1e81e4;
+    --color-primary-light: rgba(66, 152, 239, 0.15);
+    --color-primary-two: #002245;
+    --navbar-bg-color: white;
+    --navbar-height: 80px;
+    --navbar-height-compact: 64px;
+    --navbar-padding-y: 0.75rem;
+    --navbar-padding-x: 1.25rem;
+    --navbar-max-width: 1590px;
+    --wrapper-max-width: 1200px;
+    --wrapper-max-width-header: 1260px;
+    --scrollUpBoxShadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px,
+		rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.dark {
+    --navbar-bg-color: #002245;
+    body {
+        background-color: #02111f;
+    }
+}
+
+*:active {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
+.leaflet-interactive:focus {
+    outline: none;
+}
+
+.leaflet-tooltip {
+    position: absolute;
+    padding: 6px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #222;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.leaflet-tooltip-left:before {
+right: 0;
+margin-right: -12px;
+border-left-color: rgba(0, 0, 0, 0.4);
+}
+.leaflet-tooltip-right:before {
+left: 0;
+margin-left: -12px;
+border-right-color: rgba(0, 0, 0, 0.4);
+}
+.leaflet-tooltip-own {
+    position: absolute;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 0px solid #000;
+    color: #000;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.section {
+    position: relative;
+    padding: 50px 0;
+    @media (min-width: 600px) {
+        padding: 80px 0;
+    }
+    @media (min-width: 992px) {
+        overflow: hidden;
+        padding: 150px 0;
+    }
+}
+.wrapper {
+    max-width: var(--wrapper-max-width);
+    margin: 0 auto;
+    padding: 0 3%;
+    @media (min-width: 1366px) {
+        padding: 0;
+    }
+}
+
+// swiper styles
+.swiper-pagination {
+    position: static !important;
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    gap: 2px;
+    .swiper-pagination-bullet {
+        position: relative;
+        margin: 0 !important;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        opacity: 0.5 !important;
+        transition: all 0.25s ease !important;
+        background: transparent !important;
+        &:hover {
+            border: 1px solid var(--color-primary);
+            opacity: 0.75;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            
+        }
+        &.swiper-pagination-bullet-active {
+            border: 1px solid var(--color-primary);
+            opacity: 1 !important;
+        }
+    }
+}
+
+.team_swiper {
+    padding: 10px !important;
+    padding-bottom: 0 !important;
+    .team_swiper_slide {
+        &.swiper-slide-active, &:hover {
+            .team_swiper_slide_wrapper {
+                .triangle_one {
+                    left: 0px;
+                    bottom: 0px;
+                    
+                }
+                .triangle_two {
+                    right: 0px;
+                    top: 0px;
+                    
+                }
+            }
+            .card_content_wrapper {
+                transform: translateY(0%) !important;
+            }
+        }
+        .team_swiper_slide_wrapper {
+            position: relative;
+            span {
+                pointer-events: none;
+                position: absolute;
+                z-index: 1;
+                transition: all 0.35s ease;
+            }
+            .triangle_one {
+                left: -8px;
+                bottom: -8px;
+                border-bottom: 200px solid var(--color-primary);
+                border-right: 200px solid transparent;
+            }
+            .triangle_two {
+                right: -8px;
+                top: -8px;
+                border-top: 200px solid var(--color-primary);
+                border-left: 200px solid transparent;
+            }
+            .card {
+                position: relative;
+                z-index: 2;
+                .card_content {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    overflow: hidden;
+                    width: 100%;
+                    text-align: center;
+                    transition: all 0.35s ease;
+                    .card_content_wrapper {
+                        background-color: var(--color-primary);
+                        transition: all 0.35s ease;
+                        padding: 20px 15px 25px;
+                        transform: translateY(100%);
+                        color: white;
+                        h3 {
+                            font-size: 22px;
+                            font-weight: 500;
+                            margin-bottom: 4px;
+                            // line-height: 1.35;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// dashboard styles
+.dashboard {
+    display: grid;
+}

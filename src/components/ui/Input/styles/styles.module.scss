@@ -1,0 +1,31 @@
+.wrapper {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+}
+
+.input {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background-color: #fbfbfb;
+    padding: 12px 14px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    height: fit-content;
+    color: #202124;
+    font-size: 14px;
+    &:focus {
+        background-color: #fff;
+        border-color: #2c86fc;
+        --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+        --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+    }
+    &.error {
+        border-color: #d93025;
+        background-color: #fff;
+        color: #d93025;
+    }
+}
